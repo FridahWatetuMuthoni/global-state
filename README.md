@@ -1,8 +1,27 @@
-# React + Vite
+# React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React Notes
 
-Currently, two official plugins are available:
+## UseReducer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+We need to pass the reducer function and the default state to the useReducer hook.
+The useReducer hook returns the state and the dispatch function.
+Dispatch: dispatch(tpe: 'SOME ACTION')
+Then handle it in the reducer function
+
+```javascript
+import { data } from "./data";
+import { useState, useReducer } from "react";
+
+const defaultState = {
+  people: data,
+};
+
+const reducer = () => {};
+
+const Home = () => {
+  const [state, dispatch] = useReducer(reducer, defaultState);
+};
+
+export default Home;
+```
